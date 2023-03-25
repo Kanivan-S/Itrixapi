@@ -1,0 +1,31 @@
+{
+  "name": "itrix-api-2023",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "~1.4.4",
+    "crypto": "^1.0.1",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "express": "~4.16.1",
+    "express-validator": "^6.15.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.2",
+    "morgan": "~1.9.1",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.22",
+    "winston": "^3.8.2"
+  },
+  "description": "backend api for itrix 2023",
+  "main": "app.js",
+  "keywords": [
+    "ITRIX",
+    "API"
+  ],
+  "author": "",
+  "license": "ISC"
+}
