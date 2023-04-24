@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 
 
 const authroutes=require('./routes/auth');
+const ewregroutes=require('./routes/ewregister');
 
 app.use('/api/auth',authroutes)
 const unAuthRoutes=[""]
@@ -51,6 +52,7 @@ app.use((req, res, next) => {
   }
 })
 
+app.use("/api/ewreg",ewregroutes);
 
 app.use(function(req, res, next) {
   return res.status(404).send({msg:"Not found!"})
