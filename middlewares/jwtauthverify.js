@@ -3,7 +3,8 @@ const logger = require('../utils/log')(module);
 
 const authenticateToken = async (req, res, next) => {
   try {
-    const authHeader = req.headers["access-token"];
+    const authHeader = req.headers["Authorization"];
+    //bearer token
     const token = authHeader;
     if (token == null) return res.sendStatus(401);
     try {

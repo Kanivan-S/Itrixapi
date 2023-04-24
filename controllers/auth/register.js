@@ -7,6 +7,7 @@ const logger = require('../../utils/log')(module);
 const {sendMailLink}=require("./pwd");
 const saltRounds=10;
 const register=async(req,res)=>{
+
     try{
 		var linkCode=crypto.randomBytes(4).toString("hex");
        const udata={
@@ -45,13 +46,14 @@ const register=async(req,res)=>{
 						details.userid=newuser._id;
 						const newuserDet=await UserDetails.create(details);
 						
-						const link=process.env.DOMAIN_NAME+"/account-set/"+newuser._id+"/"+linkCode;
-						var mailOptions={
-							to: newuser.email,
-							subject: "Set up account link: ",
-							html: "<h3>Account Link: </h3>"+"<p><a>" + link +"</a></p>" // html body
-						};
-						sendMailLink(mailOptions,res)
+						// const link=process.env.DOMAIN_NAME+"/account-set/"+newuser._id+"/"+linkCode;
+						// var mailOptions={
+						// 	to: newuser.email,
+						// 	subject: "Set up account link: ",
+						// 	html: "<h3>Account Link: </h3>"+"<p><a>" + link +"</a></p>" // html body
+						// };
+						// sendMailLink(mailOptions,res)
+						return res.status(200).send({message:"Account registered!"});
 					}
 				});
 				if(err){

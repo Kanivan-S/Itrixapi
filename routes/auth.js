@@ -21,7 +21,8 @@ router.post(
 	register,
 )
 
-router.head('/verifyJWT',authenticateToken,async (req,res)=>{return res.sendStatus(200)});
+//router.head('/verifyJWT',authenticateToken,async (req,res)=>{return res.sendStatus(200)});
+
 router.post('/forgot-password',
 	ForgotPasswordValidator,
 	validate,

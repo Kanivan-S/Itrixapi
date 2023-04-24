@@ -4,26 +4,22 @@ var logger=require("./log")(module)
 // get token present in rquest 
 const getToken = (request) => {
   
-  var token = null;
- 
-  request.headers && request.headers.cookie.split(';').forEach(function(cookie) {
-    
-    var parts = cookie.match(/(.*?)=(.*)$/)
+  const token = request.headers['Authorization']
 
-    if(parts && parts[1]=="accessToken") {
-      token = parts[2]
-    }
-    
-  });
+  if(!token) return null ;
 
-  return token 
+  const arr = token.split(" ")
+
+  if(arr.length!=2 || arr[0]!=='Bearer') return null ;
+
+  return arr[1]
 
 };
 
 
 
 const verifyToken = (request) => {
-  logger.info(request.url);
+  
   const token = getToken(request);
 
   logger.info(token)
