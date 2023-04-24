@@ -1,0 +1,16 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = git@github.com:ISTACEG/Itrix-2023-backend.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "kani"]
+	remote = origin
+	merge = refs/heads/kani
+[branch "kanivan"]
+	remote = origin
+	merge = refs/heads/kanivan

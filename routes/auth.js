@@ -45,5 +45,8 @@ router.get('/password-set/:userId/:linkCode',
 
 router.get('/account-set/:userId/:linkCode',
 SetAccount)
+router.use(function(req, res, next) {
+	return res.status(404).send({msg:"Not found!"})
+  });
 	
 module.exports = router;
